@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import ImageGenerator from "./components/ImageGenerator"
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
     <h1>hows it goin</h1>
+    <ImageGenerator />
     <button onClick={handleClick} name="depressing">depressing</button>
     <p>{dayQuality.depressing}</p>
     <button onClick={handleClick} name="numb">numb</button>
