@@ -1,4 +1,11 @@
-.doughnut--image {
+.beer--image {
   width: 10%;
   height: auto;
+  position: relative;
+}
+
+.beer--image>h3 {
+  position:absolute;
+  top: 40%;
+  left: 95%;
 }

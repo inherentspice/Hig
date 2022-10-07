@@ -20,7 +20,7 @@ function App() {
   return (
     <>
     <h1>hows it goin</h1>
-    <ImageGenerator />
+    <ImageGenerator props={dayQuality}/>
     <button onClick={handleClick} name="depressing">depressing</button>
     <p>{dayQuality.depressing}</p>
     <button onClick={handleClick} name="numb">numb</button>

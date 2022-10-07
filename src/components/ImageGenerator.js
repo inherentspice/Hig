@@ -1,7 +1,12 @@
 import Beer from "../images/Beer"
 
-export default function ImageGenerator({depressing, numb, alright, beautiful}) {
+export default function ImageGenerator(props) {
+  console.log(props)
+
   return (
-    <Beer fillOutline="rgb(125, 124, 1)" fillTab="rgb(1, 1, 210)" stroke="rgb(255, 1, 1)"/>
+    <div className="beer--image">
+      <Beer fillOutline="yellow" fillTab="yellow" stroke="red"/>
+      <h3>beer of life.</h3>
+    </div>
   )
 }
