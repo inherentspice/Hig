@@ -7,7 +7,6 @@ function App() {
   const [dayQuality, setDayQuality] = useState(
     {
       depressing: 0,
-      numb: 0,
       alright: 0,
       beautiful: 0
     })
@@ -23,8 +22,6 @@ function App() {
     <ImageGenerator props={dayQuality}/>
     <button onClick={handleClick} name="depressing">depressing</button>
     <p>{dayQuality.depressing}</p>
-    <button onClick={handleClick} name="numb">numb</button>
-    <p>{dayQuality.numb}</p>
     <button onClick={handleClick} name="alright">alright</button>
     <p>{dayQuality.alright}</p>
     <button onClick={handleClick} name="beautiful">beautiful</button>
