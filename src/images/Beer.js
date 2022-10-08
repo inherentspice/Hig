@@ -3,8 +3,8 @@ export default function Beer({fillOutline, fillTab, stroke}) {
   return (
 
   <svg
-    height='300px'
-    width='300px'
+    height='150px'
+    width='150px'
     version="1.1"
     stroke={stroke}
     xmlns="http://www.w3.org/2000/svg"

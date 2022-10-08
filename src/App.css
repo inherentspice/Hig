@@ -1,11 +1,11 @@
 .beer--image {
-  width: 10%;
+  max-width: min-content;
   height: auto;
   position: relative;
 }
 
 .beer--image>h3 {
   position:absolute;
-  top: 40%;
-  left: 95%;
+  top: 30%;
+  left: 35%;
 }
