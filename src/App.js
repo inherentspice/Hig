@@ -19,9 +19,11 @@ function App() {
 
   return (
     <>
-    <h1>hows it goin</h1>
-    <ImageGenerator props={dayQuality}/>
-    <Buttons handleClick={handleClick} dayQuality={dayQuality}/>
+    <main style={{border: "50px solid red"}}>
+      <h1>hows it goin</h1>
+      <ImageGenerator props={dayQuality}/>
+      <Buttons handleClick={handleClick} dayQuality={dayQuality}/>
+    </main>
     </>
   );
 }
