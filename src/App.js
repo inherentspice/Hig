@@ -2,7 +2,8 @@ import { useState } from 'react';
 import './App.css';
 import ImageGenerator from "./components/ImageGenerator"
 import Buttons from "./components/Buttons"
-
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 
 function App() {
   const [dayQuality, setDayQuality] = useState(
@@ -39,11 +40,13 @@ function App() {
 
   return (
     <>
-    <main style={{border: `50px solid ${maxColor}`}}>
-      <h1 style={{color: `${color}`}}>hows it goin</h1>
-      <ImageGenerator dayQuality={dayQuality} color={color} maxColor={maxColor}/>
+    <Header />
+    <main style={{backgroundColor: `${maxColor}`}}>
+      <h1>hows it goin</h1>
+      <ImageGenerator color={color} maxColor={maxColor}/>
       <Buttons handleClick={handleClick} dayQuality={dayQuality}/>
     </main>
+    <Footer />
     </>
   );
 }
