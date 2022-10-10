@@ -49,7 +49,7 @@ main {
 .button--single>button {
   height: 3rem;
   width: 120px;
-  background-color: rgb(55, 245, 181);
+  background-color: rgb(55, 255, 181);
   border: none;
   border-radius: 5px;
   box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.1);
@@ -57,4 +57,9 @@ main {
   font-size: 1rem;
   font-weight: 600;
   color: white;
+}
+
+.button--single>button:hover {
+  background-color: rgb(55, 240, 181);
+  box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.2);;
 }
