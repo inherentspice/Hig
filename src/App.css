@@ -15,6 +15,7 @@ main {
   background-color: whitesmoke;
   width: 20%;
   height: 50%;
+  box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.3)
 }
 
 .beer--image {
