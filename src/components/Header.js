@@ -1,6 +1,6 @@
 import Logo from "../images/hig-logo-v7.png"
 
-export default function Header() {
+export default function Header(props) {
   return (
     <>
     <header>
@@ -8,6 +8,14 @@ export default function Header() {
         <h1>hig</h1>
         <img className="header--logo" src={Logo} alt="ai generated cartoon of beer cans"></img>
       </div>
+      <div className="page-change--container">
+        <button onClick={props.handlePageTransition}>home</button>
+        <button onClick={props.handlePageTransition}>about</button>
+        <button onClick={props.handlePageTransition}>history</button>
+      </div>
+
+
+
     </header>
     </>
   )
