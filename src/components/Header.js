@@ -8,9 +8,11 @@ export default function Header(props) {
         <h1>hig</h1>
         <img className="header--logo" src={Logo} alt="ai generated cartoon of beer cans"></img>
       </div>
-      <button onClick={props.handlePageTransition}>home</button>
-      <button onClick={props.handlePageTransition}>about</button>
-      <button onClick={props.handlePageTransition}>history</button>
+      <div className="page-change--container">
+        <button onClick={props.handlePageTransition}>home</button>
+        <button onClick={props.handlePageTransition}>about</button>
+        <button onClick={props.handlePageTransition}>history</button>
+      </div>
 
 
 
