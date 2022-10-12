@@ -1,5 +1,4 @@
 #root {
-  background-color: rgb(55, 255, 181);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -8,7 +7,17 @@
   justify-content: space-between;
 
 }
+
 main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100%;
+  background-color: rgb(55, 255, 181);
+
+}
+.main--contents {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +29,7 @@ main {
   box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.3);
 }
 
-main>h1 {
+.main--contents>h1 {
   color: rgb(55, 255, 181);
 }
 
@@ -79,7 +88,7 @@ header {
   margin-top: 0;
   width: 100%;
   background-color: white;
-  border-bottom: 1px solid rgb(0, 0, 0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   box-shadow: 1px 4px 2px 1px rgb(2, 206, 141);
 }
 
@@ -92,4 +101,18 @@ header {
 }
 .header--logo {
   height: 100px;
+}
+
+/* Footer */
+.footer-container {
+  background-color: white;
+  width: 100%;
+  height: 3rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.footer-link {
+  margin: 0;
+  height: 30px;
 }

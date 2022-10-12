@@ -41,10 +41,12 @@ function App() {
   return (
     <>
     <Header />
-    <main style={{backgroundColor: `${maxColor}`}}>
-      <h1>hows it goin</h1>
-      <ImageGenerator color={color} maxColor={maxColor}/>
-      <Buttons handleClick={handleClick} dayQuality={dayQuality}/>
+    <main>
+      <div className="main--contents"style={{backgroundColor: `${maxColor}`}}>
+        <h1>hows it goin</h1>
+        <ImageGenerator color={color} maxColor={maxColor}/>
+        <Buttons handleClick={handleClick} dayQuality={dayQuality}/>
+      </div>
     </main>
     <Footer />
     </>
