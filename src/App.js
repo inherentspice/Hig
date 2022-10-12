@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import ImageGenerator from "./components/ImageGenerator"
-import Buttons from "./components/Buttons"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import Main from "./components/Main"
 
 function App() {
   const [dayQuality, setDayQuality] = useState(
@@ -16,6 +15,8 @@ function App() {
   const [color, setColor]  = useState(getColors(dayQuality))
 
   const [maxColor, setMaxColor] = useState(getMaxColors(dayQuality))
+
+  const [page, setPage] = useState({home: true, about: false})
 
   function getColors(dayQuality) {
     const color = `rgb(${(dayQuality.depressing * 23) % 255}, ${(dayQuality.alright * 52) % 255}, ${(dayQuality.beautiful * 27) % 255})`
@@ -38,16 +39,24 @@ function App() {
     setColor(() => getColors({...dayQuality, [name]:dayQuality[name] + 1}))
   }
 
+  function handlePageTransition(e) {
+    const name = e.target.textContent
+    let newPage
+    if (name === 'home') {
+      newPage = {home: true, about: false, history: false}
+    } else if (name === 'about') {
+      newPage = {home: false, about: true, history: false}
+    } else if (name === 'history') {
+      newPage = {home: false, about: false, history: true}
+    }
+    setPage(() => newPage)
+  }
   return (
     <>
-    <Header />
-    <main>
-      <div className="main--contents"style={{backgroundColor: `${maxColor}`}}>
-        <h1>hows it goin</h1>
-        <ImageGenerator color={color} maxColor={maxColor}/>
-        <Buttons handleClick={handleClick} dayQuality={dayQuality}/>
-      </div>
-    </main>
+    <Header handlePageTransition={handlePageTransition}/>
+    {page.about && <h1>hi</h1>}
+    {page.history && <h1>the ghost of history</h1>}
+    {page.home && <Main maxColor={maxColor} color={color} handleClick={handleClick} dayQuality={dayQuality}/>}
     <Footer />
     </>
   );
