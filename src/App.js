@@ -3,6 +3,8 @@ import './App.css';
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Main from "./components/Main"
+import About from "./components/About"
+import History from './components/History'
 
 function App() {
   const [dayQuality, setDayQuality] = useState(
@@ -54,8 +56,8 @@ function App() {
   return (
     <>
     <Header handlePageTransition={handlePageTransition}/>
-    {page.about && <h1>hi</h1>}
-    {page.history && <h1>the ghost of history</h1>}
+    {page.about && <About />}
+    {page.history && <History />}
     {page.home && <Main maxColor={maxColor} color={color} handleClick={handleClick} dayQuality={dayQuality}/>}
     <Footer />
     </>
