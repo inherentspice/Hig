@@ -12,6 +12,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 100vw;
   height: 100%;
   background-color: rgb(55, 255, 181);
@@ -88,8 +89,7 @@ header {
   margin-top: 0;
   width: 100%;
   background-color: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 1px 4px 2px 1px rgb(2, 206, 141);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.6);
 }
 
 .logo--container {
