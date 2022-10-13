@@ -27,10 +27,16 @@ function App() {
 
   function getMaxColors(dayQuality) {
     const maxVoted = Math.max(dayQuality.depressing, dayQuality.alright, dayQuality.beautiful)
-    const depressingVal = dayQuality.depressing===maxVoted ? (dayQuality.depressing * 27) % 255: 255
-    const alrightVal = dayQuality.alright===maxVoted ? (dayQuality.alright * 23) % 255: 255
-    const beautifulVal = dayQuality.beautiful===maxVoted ? (dayQuality.beautiful * 52) % 255: 255
+    let depressingVal = dayQuality.depressing===maxVoted ? (dayQuality.depressing * 27) % 255: 255
+    let alrightVal = dayQuality.alright===maxVoted ? (dayQuality.alright * 23) % 255: 255
+    let beautifulVal = dayQuality.beautiful===maxVoted ? (dayQuality.beautiful * 52) % 255: 255
+    if (depressingVal===0 && alrightVal===0 && beautifulVal===0) {
+      depressingVal = 255
+      alrightVal = 255
+      beautifulVal = 255
+    }
     const maxColor = `rgb(${depressingVal}, ${alrightVal}, ${beautifulVal})`
+    console.log(maxColor)
     return maxColor
   }
 
