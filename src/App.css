@@ -141,3 +141,16 @@ header {
   margin: 0;
   height: 30px;
 }
+
+
+/* About */
+
+.message--slide {
+  display: flex;
+}
+
+.message--slide>img {
+  height: 6rem;
+  fill: rgb(55 194 255);
+  cursor: pointer;
+}
