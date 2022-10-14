@@ -9,9 +9,9 @@ import History from './components/History'
 function App() {
   const [dayQuality, setDayQuality] = useState(
     {
-      depressing: 0,
+      nah: 0,
       alright: 0,
-      beautiful: 0
+      yeah: 0
     })
 
   const [color, setColor]  = useState(getColors(dayQuality))
@@ -21,21 +21,21 @@ function App() {
   const [page, setPage] = useState({home: true, about: false})
 
   function getColors(dayQuality) {
-    const color = `rgb(${(dayQuality.depressing * 23) % 255}, ${(dayQuality.alright * 52) % 255}, ${(dayQuality.beautiful * 27) % 255})`
+    const color = `rgb(${(dayQuality.nah * 23) % 255}, ${(dayQuality.alright * 52) % 255}, ${(dayQuality.yeah * 27) % 255})`
     return color
   }
 
   function getMaxColors(dayQuality) {
-    const maxVoted = Math.max(dayQuality.depressing, dayQuality.alright, dayQuality.beautiful)
-    let depressingVal = dayQuality.depressing===maxVoted ? (dayQuality.depressing * 27) % 255: 255
+    const maxVoted = Math.max(dayQuality.nah, dayQuality.alright, dayQuality.yeah)
+    let nahVal = dayQuality.nah===maxVoted ? (dayQuality.nah * 27) % 255: 255
     let alrightVal = dayQuality.alright===maxVoted ? (dayQuality.alright * 23) % 255: 255
-    let beautifulVal = dayQuality.beautiful===maxVoted ? (dayQuality.beautiful * 52) % 255: 255
-    if (depressingVal===0 && alrightVal===0 && beautifulVal===0) {
-      depressingVal = 255
+    let yeahVal = dayQuality.yeah===maxVoted ? (dayQuality.yeah * 52) % 255: 255
+    if (nahVal===0 && alrightVal===0 && yeahVal===0) {
+      nahVal = 255
       alrightVal = 255
-      beautifulVal = 255
+      yeahVal = 255
     }
-    const maxColor = `rgb(${depressingVal}, ${alrightVal}, ${beautifulVal})`
+    const maxColor = `rgb(${nahVal}, ${alrightVal}, ${yeahVal})`
     console.log(maxColor)
     return maxColor
   }

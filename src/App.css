@@ -149,6 +149,9 @@ header {
   display: flex;
 }
 
+.message--content {
+  width: 200px;
+}
 .message--slide>img {
   height: 6rem;
   fill: rgb(55 194 255);

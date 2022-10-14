@@ -4,16 +4,16 @@ export default function Button(props) {
 
   <div className="button--display">
       <div className="button--single">
-        <button onClick={props.handleClick} name="depressing">depressing</button>
-        <p>{props.dayQuality.depressing}</p>
+        <button onClick={props.handleClick} name="nah">nah</button>
+        <p>{props.dayQuality.nah}</p>
       </div>
       <div className="button--single">
         <button onClick={props.handleClick} name="alright">alright</button>
         <p>{props.dayQuality.alright}</p>
       </div>
       <div className="button--single">
-        <button onClick={props.handleClick} name="beautiful">beautiful</button>
-        <p>{props.dayQuality.beautiful}</p>
+        <button onClick={props.handleClick} name="yeah">yeah</button>
+        <p>{props.dayQuality.yeah}</p>
       </div>
     </div>
   )
