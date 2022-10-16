@@ -157,3 +157,9 @@ header {
   fill: rgb(55 194 255);
   cursor: pointer;
 }
+
+.message--content>img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50px;
+}
