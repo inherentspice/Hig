@@ -156,6 +156,9 @@ header {
   height: 6rem;
   fill: rgb(55 194 255);
   cursor: pointer;
+  position: absolute;
+  left: 58%;
+  top: 50%;
 }
 
 .message--content>img {
