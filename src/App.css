@@ -140,6 +140,7 @@ header {
 .footer--link {
   margin: 0;
   height: 30px;
+  width: 30px;
 }
 
 
@@ -159,6 +160,10 @@ header {
   position: absolute;
   left: 58%;
   top: 50%;
+}
+
+.message--slide>img:hover {
+  opacity: 0.6;
 }
 
 .message--content>img {
