@@ -1,11 +1,15 @@
-import Logo from "../images/hig-logo-v7.png"
+import { SiInstagram, SiFacebook, SiGithub} from "react-icons/si";
+
 
 export default function Footer() {
   return (
     <div className="footer--container">
-      <img className="footer--link"src={Logo} alt=""></img>
-      <img className="footer--link"src={Logo} alt=""></img>
-      <img className="footer--link"src={Logo} alt=""></img>
+      <SiInstagram />
+      <SiFacebook />
+      <SiGithub />
+      {/* <img className="footer--link"src={SiInstagram} alt=""></img>
+      <img className="footer--link"src={SiInstagram} alt=""></img>
+      <img className="footer--link"src={SiInstagram} alt=""></img> */}
     </div>
   )
 }

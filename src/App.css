@@ -140,6 +140,7 @@ header {
 .footer--link {
   margin: 0;
   height: 30px;
+  width: 30px;
 }
 
 
@@ -149,8 +150,24 @@ header {
   display: flex;
 }
 
+.message--content {
+  width: 200px;
+}
 .message--slide>img {
   height: 6rem;
   fill: rgb(55 194 255);
   cursor: pointer;
+  position: absolute;
+  left: 58%;
+  top: 50%;
+}
+
+.message--slide>img:hover {
+  opacity: 0.6;
+}
+
+.message--content>img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50px;
 }
