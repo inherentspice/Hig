@@ -135,15 +135,15 @@ header {
   height: 3rem;
   border-top: 1px solid rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  /* padding-left: 10px; */
 }
 
-.footer--link {
-  margin: 0;
-  height: 30px;
-  width: 30px;
+.react-icon {
+  padding-left: 10px;
 }
-
-
 /* About */
 
 .message--slide {
