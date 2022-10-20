@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -18,7 +18,7 @@ function App() {
 
   const [maxColor, setMaxColor] = useState(getMaxColors(dayQuality))
 
-  const [page, setPage] = useState({home: true, about: false})
+  const [page, setPage] = useState({home: true, about: false, history: false})
 
   function getColors(dayQuality) {
     const color = `rgb(${(dayQuality.nah * 23) % 255}, ${(dayQuality.alright * 52) % 255}, ${(dayQuality.yeah * 27) % 255})`
@@ -36,7 +36,6 @@ function App() {
       yeahVal = 255
     }
     const maxColor = `rgb(${nahVal}, ${alrightVal}, ${yeahVal})`
-    console.log(maxColor)
     return maxColor
   }
 
