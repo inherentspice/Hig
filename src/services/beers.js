@@ -1,10 +1,13 @@
 import axios from "axios"
-const baseUrl = "http://localhost:3001/api/beers"
+const baseUrl = "/api/beers"
 
 const getAll = () => {
   return axios.get(baseUrl)
 }
 
+const getOne = date => {
+  return axios.get(`${baseUrl}/${date}`)
+}
 const create = newObject => {
   return axios.post(baseUrl, newObject)
 }
@@ -15,6 +18,7 @@ const update = (id, newObject) => {
 
 export default {
   getAll,
+  getOne,
   create,
   update
 }

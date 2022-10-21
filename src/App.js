@@ -5,18 +5,40 @@ import Footer from "./components/Footer"
 import Main from "./components/Main"
 import About from "./components/About"
 import History from './components/History'
+import beerService from "./services/beers"
 
 function App() {
-  const [dayQuality, setDayQuality] = useState(
-    {
-      nah: 0,
-      alright: 0,
-      yeah: 0
-    })
+  const [dayQuality, setDayQuality] = useState('')
+  const [color, setColor]  = useState('')
+  const [maxColor, setMaxColor] = useState('')
 
-  const [color, setColor]  = useState(getColors(dayQuality))
+  useEffect(() => {
+    const date = new Date()
+    const queryDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate())
+    beerService
+      .getOne(queryDate)
+      .then(response => {
+        setDayQuality(() => response.data.content)
+      })
+      .catch(error => {
+        if (error.response.status === 404) {
+          let newBeer = {content: {nah: 0, alright: 0, yeah: 0}, date: queryDate}
+          setDayQuality(() => newBeer.content)
+          beerService
+            .create(newBeer)
+          }
 
-  const [maxColor, setMaxColor] = useState(getMaxColors(dayQuality))
+      })
+
+  }, [])
+
+  useEffect(() => {
+    setColor(() => getColors(dayQuality))
+  }, [dayQuality])
+
+  useEffect(() => {
+    setMaxColor(() => getMaxColors(dayQuality))
+  }, [dayQuality])
 
   const [page, setPage] = useState({home: true, about: false, history: false})
 
@@ -58,6 +80,8 @@ function App() {
     }
     setPage(() => newPage)
   }
+
+
   return (
     <>
     <Header handlePageTransition={handlePageTransition}/>
