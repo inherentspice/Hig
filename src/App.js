@@ -13,8 +13,7 @@ function App() {
   const [maxColor, setMaxColor] = useState('')
 
   useEffect(() => {
-    const date = new Date()
-    const queryDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate())
+    const queryDate = getFormattedDate()
     beerService
       .getOne(queryDate)
       .then(response => {
@@ -27,9 +26,7 @@ function App() {
           beerService
             .create(newBeer)
           }
-
       })
-
   }, [])
 
   useEffect(() => {
@@ -41,6 +38,12 @@ function App() {
   }, [dayQuality])
 
   const [page, setPage] = useState({home: true, about: false, history: false})
+
+  function getFormattedDate() {
+    const date = new Date()
+    const queryDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate())
+    return queryDate
+  }
 
   function getColors(dayQuality) {
     const color = `rgb(${(dayQuality.nah * 23) % 255}, ${(dayQuality.alright * 52) % 255}, ${(dayQuality.yeah * 27) % 255})`
@@ -63,9 +66,16 @@ function App() {
 
   function handleClick(e) {
     const name = e.target.name
-    setDayQuality(prevState => ({...prevState, [name]: prevState[name] + 1}))
-    setMaxColor(() => getMaxColors({...dayQuality, [name]: dayQuality[name] + 1}))
-    setColor(() => getColors({...dayQuality, [name]:dayQuality[name] + 1}))
+    const date = getFormattedDate()
+    const updatedDayQuality = {
+      content: {...dayQuality, [name]: dayQuality[name] + 1},
+      date: date
+    }
+    beerService
+      .update(date, updatedDayQuality)
+      .then(mongooseUpdatedDate => {
+        setDayQuality(() => mongooseUpdatedDate.data.content)
+      })
   }
 
   function handlePageTransition(e) {
