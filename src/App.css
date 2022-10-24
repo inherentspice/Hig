@@ -159,7 +159,7 @@ a:hover {
 .message--content {
   width: 200px;
 }
-.message--slide>img {
+.next {
   height: 6rem;
   fill: rgb(55 194 255);
   cursor: pointer;
@@ -199,4 +199,8 @@ a:hover {
   color: rgb(255, 105, 180);
   font-size: 16px;
   font-weight: 600;
+}
+
+.beer {
+  left: 90% !important;
 }
