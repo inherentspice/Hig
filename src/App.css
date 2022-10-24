@@ -177,3 +177,26 @@ a:hover {
   height: 200px;
   border-radius: 50px;
 }
+
+/* History */
+
+.hist {
+  width: 100% !important;
+}
+
+.history-container {
+  display: flex;
+  gap: 3rem;
+}
+
+.history-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.history-item>p {
+  color: rgb(255, 105, 180);
+  font-size: 16px;
+  font-weight: 600;
+}
