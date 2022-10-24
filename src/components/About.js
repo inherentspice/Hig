@@ -41,7 +41,7 @@ export default function About() {
               <h4 style={{color: "rgb(55 194 255)"}}>{messages[messageIndex].text}</h4>
               {messages[messageIndex].image && <img src={messages[messageIndex].image} alt=""></img>}
             </div>
-            <img onClick={handleNextClick} src={Arrow} alt="An arrow to press to see the next message"></img>
+            <img className="next" onClick={handleNextClick} src={Arrow} alt="An arrow to press to see the next message"></img>
           </div>
         </div>
       </main>
