@@ -18,7 +18,14 @@ export default function History() {
     beerService
       .getAll()
       .then(response => {
-        setBeerHistory(response.data)
+        const beerData = response.data
+        const duplicateCheck = beerData[beerData.length - 1].date === beerData[beerData.length - 2].date
+        if (duplicateCheck) {
+          beerData.splice(beerData.length - 1)
+          setBeerHistory(() => beerData)
+        } else {
+        setBeerHistory(() => beerData)
+        }
       })
   }, [])
 
