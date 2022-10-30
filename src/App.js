@@ -6,6 +6,8 @@ import Main from "./components/Main"
 import About from "./components/About"
 import History from './components/History'
 import beerService from "./services/beers"
+import GetColors from "./components/GetColors";
+import GetMaxColors from "./components/GetMaxColor";
 
 function App() {
   const [dayQuality, setDayQuality] = useState('')
@@ -30,11 +32,11 @@ function App() {
   }, [])
 
   useEffect(() => {
-    setColor(() => getColors(dayQuality))
+    setColor(() => GetColors(dayQuality))
   }, [dayQuality])
 
   useEffect(() => {
-    setMaxColor(() => getMaxColors(dayQuality))
+    setMaxColor(() => GetMaxColors(dayQuality))
   }, [dayQuality])
 
   const [page, setPage] = useState({home: true, about: false, history: false})
@@ -43,25 +45,6 @@ function App() {
     const date = new Date()
     const queryDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate())
     return queryDate
-  }
-
-  function getColors(dayQuality) {
-    const color = `rgb(${(dayQuality.nah * 23) % 255}, ${(dayQuality.alright * 52) % 255}, ${(dayQuality.yeah * 27) % 255})`
-    return color
-  }
-
-  function getMaxColors(dayQuality) {
-    const maxVoted = Math.max(dayQuality.nah, dayQuality.alright, dayQuality.yeah)
-    let nahVal = dayQuality.nah===maxVoted ? (dayQuality.nah * 27) % 255: 255
-    let alrightVal = dayQuality.alright===maxVoted ? (dayQuality.alright * 23) % 255: 255
-    let yeahVal = dayQuality.yeah===maxVoted ? (dayQuality.yeah * 52) % 255: 255
-    if (nahVal===0 && alrightVal===0 && yeahVal===0) {
-      nahVal = 255
-      alrightVal = 255
-      yeahVal = 255
-    }
-    const maxColor = `rgb(${nahVal}, ${alrightVal}, ${yeahVal})`
-    return maxColor
   }
 
   function handleClick(e) {
