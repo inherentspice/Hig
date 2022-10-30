@@ -27,7 +27,7 @@ export default function History() {
       const test = Array.from(beerHistory).slice(beerIndex, (beerIndex + 5))
       return test
     })
-  }, [beerIndex])
+  }, [beerIndex, beerHistory])
 
 
   function handleNextHistClick() {
@@ -52,9 +52,6 @@ export default function History() {
     </>
     )
 }
-
-  console.log(beerIndex)
-  console.log(fiveBeers)
   return (
     <main style={{backgroundColor: "rgb(255, 105, 180)"}}>
       <div className="main--contents hist" style={{backgroundColor: "white"}}>
