@@ -80,6 +80,10 @@ main {
   box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.2);
 }
 
+.button--single>button:active {
+  background-color: rgb(11, 199, 130);
+}
+
 /* Header */
 
 header {
@@ -150,6 +154,8 @@ a:hover {
 .react-icon {
   padding-left: 10px;
 }
+
+
 /* About */
 
 .message--slide {
@@ -203,4 +209,10 @@ a:hover {
 
 .beer {
   left: 90% !important;
+}
+
+.history-instructions {
+  color: rgb(255, 105, 180);
+  font-size: 16px;
+  font-weight: 500;
 }
