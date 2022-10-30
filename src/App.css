@@ -31,7 +31,13 @@ main {
 }
 
 .main--contents>h1 {
-  color: rgb(55, 255, 181);
+  color: whitesmoke;
+  font-size: 35px;
+  font-weight: 500px;
+}
+
+.fresh--heading {
+  color:rgb(55, 240, 181) !important;
 }
 
 .beer--image {
