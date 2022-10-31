@@ -25,8 +25,8 @@ main {
   justify-content: center;
   gap: 3rem;
   background-color: whitesmoke;
-  width: 30%;
-  height: 50%;
+  width: max(30%, 400px);
+  height: max(50%, 400px);
   box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.3);
 }
 

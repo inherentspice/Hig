@@ -22,7 +22,7 @@ function App() {
         setDayQuality(() => response.data.content)
       })
       .catch(error => {
-        if (error.response.status === 404) {
+        if (error.response.status === 404 || error.response.status === 500) {
           let newBeer = {content: {nah: 0, alright: 0, yeah: 0}, date: queryDate}
           setDayQuality(() => newBeer.content)
           beerService
