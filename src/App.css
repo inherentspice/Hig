@@ -222,3 +222,30 @@ a:hover {
   font-size: 16px;
   font-weight: 500;
 }
+
+/* Mobile */
+
+@media only screen and (max-width: 600px) {
+  .page-change--container>button {
+    font-size: 16px;
+    width: 75px;
+  }
+
+  .next {
+    left: 75% !important;
+  }
+
+  .hist {
+    height: 90%;
+    width: 90% !important;
+    gap: 0.5rem;
+  }
+  .history-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .history-item>.beer--image>svg {
+    height: 50px;
+    width: 50px;
+  }
+}
